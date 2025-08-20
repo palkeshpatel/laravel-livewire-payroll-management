@@ -1,0 +1,173 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Employee;
+use App\Models\Department;
+use App\Models\Position;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class EmployeeSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $departments = Department::all();
+        $positions = Position::all();
+
+        $employees = [
+            [
+                'first_name' => 'John',
+                'last_name' => 'Doe',
+                'email' => 'john.doe@company.com',
+                'phone' => '+91-9876543210',
+                'date_of_birth' => '1990-05-15',
+                'gender' => 'male',
+                'address' => '123 Main Street',
+                'city' => 'Mumbai',
+                'state' => 'Maharashtra',
+                'postal_code' => '400001',
+                'country' => 'India',
+                'department_id' => $departments->where('name', 'Information Technology')->first()->id,
+                'position_id' => $positions->where('title', 'Software Developer')->first()->id,
+                'join_date' => '2023-01-15',
+                'employment_status' => 'active',
+                'basic_salary' => 50000,
+                'house_rent_allowance' => 20000,
+                'dearness_allowance' => 5000,
+                'transport_allowance' => 3000,
+                'medical_allowance' => 2000,
+                'other_allowances' => 1000,
+                'bank_name' => 'HDFC Bank',
+                'account_number' => '1234567890',
+                'ifsc_code' => 'HDFC0001234',
+                'emergency_contact_name' => 'Jane Doe',
+                'emergency_contact_phone' => '+91-9876543211',
+                'emergency_contact_relationship' => 'Spouse',
+            ],
+            [
+                'first_name' => 'Jane',
+                'last_name' => 'Smith',
+                'email' => 'jane.smith@company.com',
+                'phone' => '+91-9876543212',
+                'date_of_birth' => '1988-08-22',
+                'gender' => 'female',
+                'address' => '456 Park Avenue',
+                'city' => 'Delhi',
+                'state' => 'Delhi',
+                'postal_code' => '110001',
+                'country' => 'India',
+                'department_id' => $departments->where('name', 'Human Resources')->first()->id,
+                'position_id' => $positions->where('title', 'HR Manager')->first()->id,
+                'join_date' => '2022-06-01',
+                'employment_status' => 'active',
+                'basic_salary' => 70000,
+                'house_rent_allowance' => 28000,
+                'dearness_allowance' => 7000,
+                'transport_allowance' => 4000,
+                'medical_allowance' => 3000,
+                'other_allowances' => 2000,
+                'bank_name' => 'ICICI Bank',
+                'account_number' => '0987654321',
+                'ifsc_code' => 'ICIC0000987',
+                'emergency_contact_name' => 'Mike Smith',
+                'emergency_contact_phone' => '+91-9876543213',
+                'emergency_contact_relationship' => 'Spouse',
+            ],
+            [
+                'first_name' => 'Michael',
+                'last_name' => 'Johnson',
+                'email' => 'michael.johnson@company.com',
+                'phone' => '+91-9876543214',
+                'date_of_birth' => '1992-03-10',
+                'gender' => 'male',
+                'address' => '789 Oak Street',
+                'city' => 'Bangalore',
+                'state' => 'Karnataka',
+                'postal_code' => '560001',
+                'country' => 'India',
+                'department_id' => $departments->where('name', 'Finance & Accounting')->first()->id,
+                'position_id' => $positions->where('title', 'Accountant')->first()->id,
+                'join_date' => '2023-03-20',
+                'employment_status' => 'active',
+                'basic_salary' => 45000,
+                'house_rent_allowance' => 18000,
+                'dearness_allowance' => 4500,
+                'transport_allowance' => 2500,
+                'medical_allowance' => 1500,
+                'other_allowances' => 800,
+                'bank_name' => 'SBI Bank',
+                'account_number' => '1122334455',
+                'ifsc_code' => 'SBIN0001122',
+                'emergency_contact_name' => 'Sarah Johnson',
+                'emergency_contact_phone' => '+91-9876543215',
+                'emergency_contact_relationship' => 'Sister',
+            ],
+            [
+                'first_name' => 'Emily',
+                'last_name' => 'Brown',
+                'email' => 'emily.brown@company.com',
+                'phone' => '+91-9876543216',
+                'date_of_birth' => '1995-11-28',
+                'gender' => 'female',
+                'address' => '321 Pine Road',
+                'city' => 'Chennai',
+                'state' => 'Tamil Nadu',
+                'postal_code' => '600001',
+                'country' => 'India',
+                'department_id' => $departments->where('name', 'Marketing')->first()->id,
+                'position_id' => $positions->where('title', 'Marketing Executive')->first()->id,
+                'join_date' => '2023-08-10',
+                'employment_status' => 'active',
+                'basic_salary' => 40000,
+                'house_rent_allowance' => 16000,
+                'dearness_allowance' => 4000,
+                'transport_allowance' => 2000,
+                'medical_allowance' => 1200,
+                'other_allowances' => 600,
+                'bank_name' => 'Axis Bank',
+                'account_number' => '5566778899',
+                'ifsc_code' => 'UTIB0005566',
+                'emergency_contact_name' => 'David Brown',
+                'emergency_contact_phone' => '+91-9876543217',
+                'emergency_contact_relationship' => 'Brother',
+            ],
+            [
+                'first_name' => 'David',
+                'last_name' => 'Wilson',
+                'email' => 'david.wilson@company.com',
+                'phone' => '+91-9876543218',
+                'date_of_birth' => '1987-12-05',
+                'gender' => 'male',
+                'address' => '654 Elm Street',
+                'city' => 'Hyderabad',
+                'state' => 'Telangana',
+                'postal_code' => '500001',
+                'country' => 'India',
+                'department_id' => $departments->where('name', 'Sales')->first()->id,
+                'position_id' => $positions->where('title', 'Sales Manager')->first()->id,
+                'join_date' => '2022-09-15',
+                'employment_status' => 'active',
+                'basic_salary' => 65000,
+                'house_rent_allowance' => 26000,
+                'dearness_allowance' => 6500,
+                'transport_allowance' => 3500,
+                'medical_allowance' => 2500,
+                'other_allowances' => 1500,
+                'bank_name' => 'Kotak Bank',
+                'account_number' => '9988776655',
+                'ifsc_code' => 'KKBK0009988',
+                'emergency_contact_name' => 'Lisa Wilson',
+                'emergency_contact_phone' => '+91-9876543219',
+                'emergency_contact_relationship' => 'Spouse',
+            ],
+        ];
+
+        foreach ($employees as $employee) {
+            Employee::create($employee);
+        }
+    }
+}
